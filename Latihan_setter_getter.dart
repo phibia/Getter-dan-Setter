@@ -21,21 +21,48 @@ import 'dart:io';
 
 // }
 
+// void main(){
+//   //Getter & Setter
+//  var laptop1 = merek1();
+//  laptop1.merekgktuh = "ASUS ROG SCAR STRIX G18";
+//  print(laptop1.merek);
+// }
+
+// class merek1{
+//   String _merek = "";
+
+//   String get merek{
+//     return _merek;
+//   }
+
+//   set merekgktuh(String merek){
+//     _merek = merek;
+//   }
+//  }
+
 void main(){
-  //Getter & Setter Biasa
- var laptop1 = merek1();
- laptop1.merekgktuh = "ASUS ROG SCAR STRIX G18";
- print(laptop1.merek);
+
+  //Dengan Inputan Pengguna
+  //Getter & Setter
+ var laptop1 = kelususan();
+ stdout.write("Masukan Nilai Anda Diatas 50 = ");
+ int masuk = int.parse(stdin.readLineSync()!);
+ laptop1.nilai = masuk;
+ print(laptop1.tuntas);
 }
 
-class merek1{
-  String _merek = "";
+class kelususan{
+  int _nilai = 0;
 
-  String get merek{
-    return _merek;
-  }
-
-  set merekgktuh(String merek){
-    _merek = merek;
+  //getter singkat
+  int get tuntas => _nilai;
+  
+  //Setter dengan Validasi
+  set nilai(int tuntas){
+    if(tuntas >= 50 ){
+      _nilai = tuntas;
+    }else{
+      print("Tidak Memenuhi Syarat Bujang!!");
+    }
   }
  }
